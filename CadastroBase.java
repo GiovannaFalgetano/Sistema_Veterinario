@@ -4,22 +4,19 @@ public class CadastroBase {
 
     public void setCodigo(int value) {
         if (value <= 0) {
-            System.out.println("Código inválido, deve ser maior 0!");
-        } else {
-            this.codigo = value;
+            throw new IllegalArgumentException("Código inválido, deve ser maior que 0!");
         }
+        this.codigo = value;
     }
-    public int getCodigo() {return this.codigo;}
 
-    public void setNome (String value) {
-        if (value == null) {
-            System.out.println("Nome invalido, informe ao menos 5 caracteres!");
-        }else if (value.toString().trim().length() < 5) {
-            System.out.println("Campo não pode ter menos de 5 caracteres!");
-        } else {
-            this.nome = value;
+    public int getCodigo() { return this.codigo; }
+
+    public void setNome(String nome) {
+        if (nome == null || nome.trim().length() < 3) {
+            throw new IllegalArgumentException("Nome inválido! Informe ao menos 3 caracteres.");
         }
+        this.nome = nome.trim();
     }
-            
-    public String getNome () {return this.nome;}
+
+    public String getNome() { return this.nome; }
 }

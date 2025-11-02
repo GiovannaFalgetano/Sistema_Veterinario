@@ -9,7 +9,9 @@ public class SysVetMenu {
         int opcao = 0;
 
         do {
-            System.out.println("SISTEMA VETERINARIO");
+            System.out.println("==============================");
+            System.out.println("      SISTEMA VETERINARIO     ");
+            System.out.println("==============================");
             System.out.println("1. Especies");
             System.out.println("2. Animais");
             System.out.println("3. Clientes");
