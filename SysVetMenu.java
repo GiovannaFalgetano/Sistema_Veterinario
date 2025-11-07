@@ -23,7 +23,8 @@ public class SysVetMenu {
                 EspecieMenu especieMenu = new EspecieMenu ();
                 //especieMenu.exibir();
             } else if (opcao == 2) {
-
+                AnimaisMenu animaisMenu = new AnimaisMenu ();
+                //animaisMenu.exibir();
             } else if (opcao == 3) {
 
             }
