@@ -26,7 +26,8 @@ public class SysVetMenu {
                 AnimaisMenu animaisMenu = new AnimaisMenu ();
                 //animaisMenu.exibir();
             } else if (opcao == 3) {
-
+                ClientesMenu clientesMenuMenu = new ClientesMenu ();
+                //clientesMenu.exibir();
             }
         } while (opcao != 9);
     }

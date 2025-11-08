@@ -44,6 +44,18 @@ public class AnimaisMenu {
                     String nome = teclado.nextLine();
                     animais.setNome(nome);
 
+                    System.out.println("Digite o apelido do animal:");
+                    String apelido = teclado.nextLine();
+                    animais.setApelido(apelido);
+
+                    System.out.println("Digite a data de nascimento do animal:");
+                    String dataNasc = teclado.nextLine();
+                    animais.setDataNasc(dataNasc);
+
+                    System.out.println("Digite uma observação do animal (se necessário):");
+                    String obs = teclado.nextLine();
+                    animais.setObs(obs);
+
                     valido = true;
                     } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
@@ -68,6 +80,19 @@ public class AnimaisMenu {
                             System.out.println("Digite o novo nome do animalzinho:");
                             String novoNome = teclado.nextLine();
                             animais.setNome(novoNome);
+
+                            System.out.println("Digite o novo apelido do animalzinho:");
+                            String novoApelido = teclado.nextLine();
+                            animais.setApelido(novoApelido);
+
+                            System.out.println("Digite a nova data de nascimento do animalzinho:");
+                            String novoDataNasc = teclado.nextLine();
+                            animais.setDataNasc(novoDataNasc);
+
+                            System.out.println("Digite a nova observação do animalzinho (se necessário):");
+                            String novoObs = teclado.nextLine();
+                            animais.setObs(novoObs);
+
                             valido = true;
                             System.out.println("Animal alterado com sucesso!");
                         } catch (IllegalArgumentException e) {
@@ -76,7 +101,7 @@ public class AnimaisMenu {
                     } while (!valido);
                     }
             } else if (opcao == 13) {
-                System.out.println("Digite o codigo da especie que deseja excluir");
+                System.out.println("Digite o codigo do animal que deseja excluir");
                 int codigo = teclado.nextInt();
                 bancoAnimais.excluir(codigo);
 

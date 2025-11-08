@@ -4,6 +4,9 @@ public class CadastroBase {
     private String apelido;
     private String dataNasc;
     private String obs;
+    private String cpf;
+    private String email;
+    private String dataCadastro;
 
     public void setCodigo(int value) {
         if (value <= 0) {
@@ -31,5 +34,14 @@ public class CadastroBase {
 
     public void setObs(String obs) { this.obs = obs; }
     public String getObs() { return this.obs; }
+
+    public void setCpf(String cpf) { this.cpf = cpf; }
+    public String getCpf() { return this.cpf; }
+
+    public void setEmail(String email) { this.email = email; }
+    public String getEmail() { return this.email; }
+
+    public void setDataCadastro(String dataCadastro) { this.dataCadastro = dataCadastro; }
+    public String getDataCadastro() { return this.dataCadastro; }
 
 }
