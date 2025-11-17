@@ -18,18 +18,18 @@ public class ClientesMenu {
             System.out.println("==============================");
             System.out.println("            CLIENTES          ");
             System.out.println("==============================");
-            System.out.println("11. Adicionar");
-            System.out.println("12. Alterar");
-            System.out.println("13. Excluir");
-            System.out.println("14. Pesquisar");
-            System.out.println("15. Mostrar todos");
-            System.out.println("16. Número de clientes cadastrados");
-            System.out.println("19. Sair");
+            System.out.println("31. Adicionar");
+            System.out.println("32. Alterar");
+            System.out.println("33. Excluir");
+            System.out.println("34. Pesquisar");
+            System.out.println("35. Mostrar todos");
+            System.out.println("36. Número de clientes cadastrados");
+            System.out.println("39. Sair");
             System.out.println("==============================");
             System.out.println("Digite a opcao: ");
             opcao = teclado.nextInt();
 
-            if (opcao == 11) {
+            if (opcao == 31) {
                 Clientes clientes = new Clientes();
                 boolean valido = false;
 
@@ -64,7 +64,7 @@ public class ClientesMenu {
 
                 bancoClientes.adicionar(clientes);
 
-            } else if (opcao == 12) { // Alterar
+            } else if (opcao == 32) { // Alterar
                 System.out.println("Digite o código do cliente que deseja alterar:");
                 int codigo = teclado.nextInt();
                 teclado.nextLine(); // consome o ENTER pendente
@@ -100,12 +100,12 @@ public class ClientesMenu {
                             }
                     } while (!valido);
                     }
-            } else if (opcao == 13) {
+            } else if (opcao == 33) {
                 System.out.println("Digite o codigo do cliente que deseja excluir");
                 int codigo = teclado.nextInt();
                 bancoClientes.excluir(codigo);
 
-            } else if (opcao == 14) {
+            } else if (opcao == 34) {
                 System.out.println("Digite o codigo do cliente que deseja pesquisar:");
                 int codigo = teclado.nextInt();
                 teclado.nextLine();
@@ -119,14 +119,14 @@ public class ClientesMenu {
                     System.out.println(clientes);
                 }
 
-            }else if (opcao == 15) {
+            }else if (opcao == 35) {
                 System.out.println("==============================");
                 System.out.println("Imprimindo clientes cadastrados ...");
                 bancoClientes.imprimirTodos();
                 System.out.println("==============================");
-            } else if (opcao == 16) {
+            } else if (opcao == 36) {
                 System.out.println("Número de clientes cadastrados: " + bancoClientes.getNumeroClientes());
             }
-        } while (opcao != 19);
+        } while (opcao != 39);
     } 
 }

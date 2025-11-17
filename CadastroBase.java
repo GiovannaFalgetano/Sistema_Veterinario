@@ -1,4 +1,4 @@
-public class CadastroBase {
+public abstract class CadastroBase {
     private int codigo;
     private String nome;
     private String apelido;

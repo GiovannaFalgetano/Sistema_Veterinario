@@ -18,18 +18,18 @@ public class AnimaisMenu {
             System.out.println("==============================");
             System.out.println("            ANIMAIS        ");
             System.out.println("==============================");
-            System.out.println("11. Adicionar");
-            System.out.println("12. Alterar");
-            System.out.println("13. Excluir");
-            System.out.println("14. Pesquisar");
-            System.out.println("15. Mostrar todos");
-            System.out.println("16. Número de animais cadastrados");
-            System.out.println("19. Sair");
+            System.out.println("21. Adicionar");
+            System.out.println("22. Alterar");
+            System.out.println("23. Excluir");
+            System.out.println("24. Pesquisar");
+            System.out.println("25. Mostrar todos");
+            System.out.println("26. Número de animais cadastrados");
+            System.out.println("29. Sair");
             System.out.println("==============================");
             System.out.println("Digite a opcao: ");
             opcao = teclado.nextInt();
 
-            if (opcao == 11) {
+            if (opcao == 21) {
                 Animais animais = new Animais();
                 boolean valido = false;
 
@@ -64,7 +64,7 @@ public class AnimaisMenu {
 
                 bancoAnimais.adicionar(animais);
 
-            } else if (opcao == 12) { // Alterar
+            } else if (opcao == 22) { // Alterar
                 System.out.println("Digite o código do animal que deseja alterar:");
                 int codigo = teclado.nextInt();
                 teclado.nextLine(); // consome o ENTER pendente
@@ -100,12 +100,12 @@ public class AnimaisMenu {
                             }
                     } while (!valido);
                     }
-            } else if (opcao == 13) {
+            } else if (opcao == 23) {
                 System.out.println("Digite o codigo do animal que deseja excluir");
                 int codigo = teclado.nextInt();
                 bancoAnimais.excluir(codigo);
 
-            } else if (opcao == 14) {
+            } else if (opcao == 24) {
                 System.out.println("Digite o codigo do animal que deseja pesquisar:");
                 int codigo = teclado.nextInt();
                 teclado.nextLine();
@@ -119,14 +119,14 @@ public class AnimaisMenu {
                     System.out.println(animais);
                 }
 
-            }else if (opcao == 15) {
+            }else if (opcao == 25) {
                 System.out.println("==============================");
                 System.out.println("Imprimindo animais cadastrados ...");
                 bancoAnimais.imprimirTodos();
                 System.out.println("==============================");
-            } else if (opcao == 16) {
+            } else if (opcao == 26) {
                 System.out.println("Número de animais cadastrados: " + bancoAnimais.getNumeroAnimais());
             }
-        } while (opcao != 19);
+        } while (opcao != 29);
     } 
 }
