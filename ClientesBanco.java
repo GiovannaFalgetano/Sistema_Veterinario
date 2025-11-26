@@ -76,4 +76,14 @@ public class ClientesBanco {
         return null;
     }
 
+    public Clientes pesquisar(String nome) {
+        for (Clientes item : lista) {
+            if (item.getNome().equalsIgnoreCase(nome)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+
 }

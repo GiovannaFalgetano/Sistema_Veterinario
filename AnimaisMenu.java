@@ -106,20 +106,40 @@ public class AnimaisMenu {
                 bancoAnimais.excluir(codigo);
 
             } else if (opcao == 24) {
-                System.out.println("Digite o codigo do animal que deseja pesquisar:");
-                int codigo = teclado.nextInt();
-                teclado.nextLine();
+                System.out.println("Pesquisar por:");
+                System.out.println("1 - Código");
+                System.out.println("2 - Nome");
+                System.out.print("Escolha: ");
+                int tipoBusca = teclado.nextInt();
+                teclado.nextLine(); // limpa o buffer
 
-                Animais animais = bancoAnimais.pesquisar(codigo);
+                Animais animais = null;
+
+                if (tipoBusca == 1) {
+                    System.out.print("Digite o código do animal: ");
+                    int codigo = teclado.nextInt();
+                    teclado.nextLine();
+
+                    animais = bancoAnimais.pesquisar(codigo);
+
+                } else if (tipoBusca == 2) {
+                    System.out.print("Digite o nome do animal: ");
+                    String nome = teclado.nextLine();
+
+                    animais = bancoAnimais.pesquisar(nome);
+
+                } else {
+                    System.out.println("Opção inválida!");
+                    return; // volta ao menu
+                }
 
                 if (animais == null) {
-                    System.out.println("Animal não localizado");
+                    System.out.println("Animal não localizado!");
                 } else {
                     System.out.println("Animal encontrado:");
                     System.out.println(animais);
                 }
-
-            }else if (opcao == 25) {
+            } else if (opcao == 25) {
                 System.out.println("==============================");
                 System.out.println("Imprimindo animais cadastrados ...");
                 bancoAnimais.imprimirTodos();

@@ -81,26 +81,48 @@ public class EspecieMenu {
                 bancoEspecies.excluir(codigo);
 
             } else if (opcao == 14) {
-                System.out.println("Digite o codigo da especie que deseja pesquisar:");
-                int codigo = teclado.nextInt();
-                teclado.nextLine();
+                System.out.println("Pesquisar espécie por:");
+                System.out.println("1 - Código");
+                System.out.println("2 - Nome");
+                System.out.print("Escolha: ");
+                int tipoBusca = teclado.nextInt();
+                teclado.nextLine(); // limpa buffer
 
-                Especie especie = bancoEspecies.pesquisar(codigo);
+                Especie especie = null;
 
-                if (especie == null) {
-                    System.out.println("Espécie não localizada");
+                if (tipoBusca == 1) {
+                    System.out.print("Digite o código da espécie: ");
+                    int codigo = teclado.nextInt();
+                    teclado.nextLine();
+
+                    especie = bancoEspecies.pesquisar(codigo);
+
+                } else if (tipoBusca == 2) {
+                    System.out.print("Digite o nome da espécie: ");
+                    String nome = teclado.nextLine();
+
+                    especie = bancoEspecies.pesquisar(nome);
+
                 } else {
-                    System.out.println("Especie encontrada:");
-                    System.out.println(especie);
+                    System.out.println("Opção inválida!");
+                    return;
                 }
 
-            }else if (opcao == 15) {
+                if (especie == null) {
+                    System.out.println("Espécie não localizada!");
+                } else {
+                    System.out.println("Espécie encontrada:");
+                    System.out.println(especie);
+                }
+            } else if (opcao == 15) {
                 System.out.println("==============================");
                 System.out.println("Imprimindo Especies...");
                 bancoEspecies.imprimirTodos();
                 System.out.println("==============================");
+
             } else if (opcao == 16) {
                 System.out.println("Número de especies cadastradas: " + bancoEspecies.getNumeroEspecies());
+                
             }
         } while (opcao != 19);
     } 

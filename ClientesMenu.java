@@ -106,26 +106,49 @@ public class ClientesMenu {
                 bancoClientes.excluir(codigo);
 
             } else if (opcao == 34) {
-                System.out.println("Digite o codigo do cliente que deseja pesquisar:");
-                int codigo = teclado.nextInt();
-                teclado.nextLine();
+                System.out.println("Pesquisar cliente por:");
+                System.out.println("1 - Código");
+                System.out.println("2 - Nome");
+                System.out.print("Escolha: ");
+                int tipoBusca = teclado.nextInt();
+                teclado.nextLine(); // limpa buffer
 
-                Clientes clientes = bancoClientes.pesquisar(codigo);
+                Clientes clientes = null;
+
+                if (tipoBusca == 1) {
+                    System.out.print("Digite o código do cliente: ");
+                    int codigo = teclado.nextInt();
+                    teclado.nextLine();
+
+                    clientes = bancoClientes.pesquisar(codigo);
+
+                } else if (tipoBusca == 2) {
+                    System.out.print("Digite o nome do cliente: ");
+                    String nome = teclado.nextLine();
+
+                    clientes = bancoClientes.pesquisar(nome);
+
+                } else {
+                    System.out.println("Opção inválida!");
+                    return; // volta ao menu sem erro
+                }
 
                 if (clientes == null) {
-                    System.out.println("Cliente não localizado");
+                    System.out.println("Cliente não localizado!");
                 } else {
                     System.out.println("Cliente encontrado:");
                     System.out.println(clientes);
                 }
-
-            }else if (opcao == 35) {
+           
+            } else if (opcao == 35) {
                 System.out.println("==============================");
                 System.out.println("Imprimindo clientes cadastrados ...");
                 bancoClientes.imprimirTodos();
                 System.out.println("==============================");
+            
             } else if (opcao == 36) {
                 System.out.println("Número de clientes cadastrados: " + bancoClientes.getNumeroClientes());
+            
             }
         } while (opcao != 39);
     } 

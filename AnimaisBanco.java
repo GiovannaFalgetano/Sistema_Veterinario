@@ -78,6 +78,14 @@ public class AnimaisBanco {
     return null; 
     }
 
+    public Animais pesquisar(String nome) {
+    for (Animais item : lista) {
+        if (item.getNome().equalsIgnoreCase(nome)) {
+            return item;
+        }
+    }
+    return null;
+}
 
 }
 

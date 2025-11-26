@@ -71,12 +71,24 @@ public class EspecieBanco {
     }
 
    public Especie pesquisar(int codigo) {
-    for (Especie item : lista) {
-        if (item.getCodigo() == codigo) {
-            return item; // já retorna imediatamente se encontrado
+        for (Especie item : lista) {
+            if (item.getCodigo() == codigo) {
+                return item; // já retorna imediatamente se encontrado
+            }
         }
-    }
     return null; // retorna null se não encontrou
     }
+
+    public Especie pesquisar(String nome) {
+        for (Especie item : lista) {
+            if (item.getNome().equalsIgnoreCase(nome)) {
+                return item;
+            }
+        }
+    return null;
+}
+
+
+
 
 }
