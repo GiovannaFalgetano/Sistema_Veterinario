@@ -28,6 +28,7 @@ public class AnimaisMenu {
             System.out.println("==============================");
             System.out.println("Digite a opcao: ");
             opcao = teclado.nextInt();
+            teclado.nextLine(); // consome o ENTER pendente
 
             if (opcao == 21) {
                 Animais animais = new Animais();
@@ -35,10 +36,6 @@ public class AnimaisMenu {
 
                 do {
                     try {
-                    System.out.println("Digite o código do animal:");
-                    int codigo = teclado.nextInt();
-                    teclado.nextLine(); // consome o ENTER pendente
-                    animais.setCodigo(codigo);
 
                     System.out.println("Digite o nome do animal:");
                     String nome = teclado.nextLine();

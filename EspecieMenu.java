@@ -28,17 +28,15 @@ public class EspecieMenu {
             System.out.println("==============================");
             System.out.println("Digite a opcao: ");
             opcao = teclado.nextInt();
+            teclado.nextLine(); // consome o ENTER pendente
+
 
             if (opcao == 11) {
-                Especie especie = new Especie();
+                Especie especie = new Especie(); //código gerado
                 boolean valido = false;
 
                 do {
                     try {
-                    System.out.println("Digite o código da espécie:");
-                    int codigo = teclado.nextInt();
-                    teclado.nextLine(); // consome o ENTER pendente
-                    especie.setCodigo(codigo);
 
                     System.out.println("Digite o nome da espécie:");
                     String nome = teclado.nextLine();

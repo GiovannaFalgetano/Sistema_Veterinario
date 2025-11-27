@@ -28,17 +28,15 @@ public class ClientesMenu {
             System.out.println("==============================");
             System.out.println("Digite a opcao: ");
             opcao = teclado.nextInt();
+            teclado.nextLine(); // consome o ENTER pendente
+
 
             if (opcao == 31) {
-                Clientes clientes = new Clientes();
+                Clientes clientes = new Clientes(); //código gerado
                 boolean valido = false;
 
                 do {
                     try {
-                    System.out.println("Digite o código do cliente:");
-                    int codigo = teclado.nextInt();
-                    teclado.nextLine(); // consome o ENTER pendente
-                    clientes.setCodigo(codigo);
 
                     System.out.println("Digite o nome do cliente:");
                     String nome = teclado.nextLine();
